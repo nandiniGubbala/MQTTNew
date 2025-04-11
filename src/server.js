@@ -22,7 +22,9 @@ const loginRoutes = require('./routes/loginRoute');
 app.use('/user', userRoutes);
 app.use('/device',deviceRoutes);
 app.use('/auth',loginRoutes);
-
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
 
 const PORT = process.env.PORT;
 server.listen( PORT || 6000 , () =>{
